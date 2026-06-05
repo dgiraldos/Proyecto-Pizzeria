@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
-db.sqlite3
+# Voy a no ignorar en este caso db.sqlite3
 
 venv/
 env/
