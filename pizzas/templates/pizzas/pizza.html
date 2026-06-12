@@ -1,0 +1,22 @@
+{% extends 'pizzas/base.html' %}
+
+{% block content %}
+    <h2>Carta</h2>
+    <p>Estas son las pizzas disponibles en nuestro menú:</p>
+    <ul>
+        {% for each_pizza in pizzas %}
+            <li>
+                <strong>{{ each_pizza }}</strong>
+                <ul>
+                    {% for ingrediente in each_pizza.ingrediente_set.all %}
+                        <li>{{ ingrediente }}</li>
+                    {% empty %}
+                        <li>No hay ingredientes registrados para esta pizza.</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% empty %}
+            <li>No hay pizzas añadidas todavía.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
